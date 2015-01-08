@@ -62,7 +62,9 @@ class SockWrap:
         self.corenlp_libdir = corenlp_libdir
 
         corenlp_jar_fullfilenames = [os.path.join(corenlp_libdir, f) for f in corenlp_jars]
-        assert any(os.path.exists(f) for f in corenlp_jar_fullfilenames), "CoreNLP jar file does not seem to exist; are the paths correct?  Searched files: %s" % repr(corenlp_jar_fullfilenames)
+        corenlp_jar_fullfilenames = [f for f in corenlp_jar_fullfilenames if os.path.exists(f)]
+        if not corenlp_jar_fullfilenames:
+            raise OSError("CoreNLP jar file does not seem to exist; are the paths correct?  Searched files: %s" % repr(corenlp_jar_fullfilenames)
 
         local_libdir = os.path.join(os.path.abspath(os.path.dirname(__file__)),
                                     'lib')
