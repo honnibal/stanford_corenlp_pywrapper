@@ -23,7 +23,7 @@ JAVA = "java"
 XMX_AMOUNT = "4g"
 
 PARSEDOC_TIMEOUT_SEC = 60 * 5
-STARTUP_BUSY_WAIT_INTERVAL_SEC = 2.0
+STARTUP_BUSY_WAIT_INTERVAL_SEC = 60.0
 
 #arg for mkstemp(dir=), so if None it defaults to somewhere
 TEMP_DIR = None
