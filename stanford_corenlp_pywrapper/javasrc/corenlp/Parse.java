@@ -255,7 +255,7 @@ public class Parse {
 				break;
 			case JUSTPARSE:
 				addTokenAnno(sent_info, sentence, "pos", PartOfSpeechAnnotation.class);
-				addParseTree(sent_info,sentence);
+				addDepsBasic(sent_info,sentence);
 				break;
 			case MEDPARSE:
 				addTokenAnno(sent_info, sentence, "pos", PartOfSpeechAnnotation.class);
