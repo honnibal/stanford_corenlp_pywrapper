@@ -64,10 +64,10 @@ class SockWrap:
         corenlp_jar_fullfilenames = [os.path.join(corenlp_libdir, f) for f in corenlp_jars]
         corenlp_jar_fullfilenames = [f for f in corenlp_jar_fullfilenames if os.path.exists(f)]
         if not corenlp_jar_fullfilenames:
-            raise OSError("CoreNLP jar file does not seem to exist; are the paths correct?  Searched files: %s" % repr(corenlp_jar_fullfilenames))
+            raise Exception(corenlp_libdir)
+            #raise OSError("CoreNLP jar file does not seem to exist; are the paths correct?  Searched files: %s" % repr(corenlp_jar_fullfilenames))
 
-        local_libdir = os.path.join(os.path.abspath(os.path.dirname(__file__)),
-                                    'lib')
+        local_libdir = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'lib')
 
         jars = [os.path.join(local_libdir, "piperunner.jar"),
                 # for eclipse development only
