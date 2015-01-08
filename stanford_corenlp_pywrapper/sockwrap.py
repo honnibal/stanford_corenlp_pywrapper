@@ -53,7 +53,8 @@ class SockWrap:
 
     def __init__(self, mode=None, server_port=12340, configfile=None,
             corenlp_libdir=os.path.join(os.environ['HOME'], "stanford-corenlp"),
-            corenlp_jars=("stanford-corenlp-3.5.0.jar","stanford-corenlp-3.5.0-models.jar")
+            corenlp_jars=("stanford-corenlp-3.5.0.jar","stanford-corenlp-3.5.0-models.jar",
+                          "edu/stanford/nlp/models/srparser/englishSR.ser.gz")
             ):
         self.mode = mode
         self.proc = None
