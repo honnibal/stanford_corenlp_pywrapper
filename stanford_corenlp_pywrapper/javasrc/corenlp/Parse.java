@@ -127,7 +127,7 @@ public class Parse {
 			props.put("annotators", "tokenize, ssplit, pos, lemma, ner");
 		} 
 		else if (mode==ProcessingMode.JUSTPARSE || mode==ProcessingMode.MEDPARSE) {
-			props.put("annotators", "tokenize, ssplit, pos, parse");			
+			props.put("annotators", "tokenize, ssplit, pos, depparse");			
 		}
 		else if (mode==ProcessingMode.FULLPARSE) {
 			props.put("annotators", "tokenize, ssplit, pos, lemma, ner, parse");
